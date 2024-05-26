@@ -1,0 +1,74 @@
+<body>
+  <div class="container">
+
+
+    <mat-card class="example-card-header mb-2">
+      <p class="header-card-text">Add Product</p>
+    </mat-card>
+    <mat-card class="example-card">
+      <mat-card-content>
+        <div class="row">
+          <form [formGroup]="productForm">
+
+            <div class="row">
+              <label class="col-2 label">Product Name</label>
+              <mat-form-field class="col-10" appearance="outline">
+                <mat-label>Product Name</mat-label>
+                <input matInput placeholder="Placeholder" formControlName="pname">
+              </mat-form-field>
+
+              <label class="col-md-2 label">Quantity</label>
+              <mat-form-field class="col-md-3" appearance="outline">
+                <mat-label>Enter Quantity</mat-label>
+                <input matInput type="number" formControlName="qtestock">
+              </mat-form-field>
+
+              <label class="col-md-3 label">Colore</label>
+              <mat-form-field class="col-md-4" appearance="outline">
+                <mat-label><i class="fa-solid fa-location-dot" style="margin-right: 0.5rem;"> </i>Place
+                </mat-label>
+                <mat-select formControlName="couleur" ngDefaultControl>
+                  <mat-option value="red">red</mat-option>
+                  <mat-option value="yellow">yellow</mat-option>
+                  <mat-option value="blue">blue</mat-option>
+                  <mat-option value="green">green</mat-option>
+                  <mat-option value="white">white</mat-option>
+                  <mat-option value="rose">rose</mat-option>
+                  <mat-option value="amber">amber</mat-option>
+                  <mat-option value="almond">almond</mat-option>
+                  <mat-option value="black">black</mat-option>
+                  <mat-option value="aqua">aqua</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <label class="col-md-2 label">desart</label>
+              <mat-form-field class="col-md-10" appearance="outline">
+                <textarea formControlName="desart" matInput></textarea>
+              </mat-form-field>
+
+
+              <label class="col-2 label">Price</label>
+              <mat-form-field class="col-3" appearance="outline">
+                <mat-label>Price</mat-label>
+                <input formControlName="puart" matInput placeholder="Placeholder">
+              </mat-form-field>
+              <!-- <label class="col-md-3 label">Add Image</label>
+              <div class="col-md-4 mt-3">
+                <!-- <input type="file" (change)="handleFileInput($event.target['files'])" formControlName="image"/>
+                <input type="file" (change)="onChange($event)" formControlName="image"/>
+            <img [src]="myImage" alt="image" class="show-img"> -->
+              <!-- </div> -->
+            </div>
+          </form>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <div class="button">
+      <button class="btn" (click)="onClickSubmitForm()" mat-raised-button style="background: #43db52">
+        Add
+      </button>
+    </div>
+  </div>
+
+</body>
