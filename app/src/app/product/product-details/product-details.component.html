@@ -12,12 +12,12 @@
           <div class="col-lg-9 col-md-9 col-sm-9 main-image">
             <mat-grid-list cols="1" rowHeight="1:1" class="mt-4">
               <mat-grid-tile>
-                <!-- <img mat-card-image src={{image}} alt="image" style='height: 100%; width: 100%; object-fit: contain'/> -->
-                <!-- <img mat-card-image src="assets/download.jpg" alt="img" style='height: 100%; width: 100%; object-fit: contain'> -->
+                <img mat-card-image src={{image}} alt="image" style='height: 100%; width: 100%; object-fit: contain'/>
+                <img mat-card-image src="assets/download.jpg" alt="img" style='height: 100%; width: 100%; object-fit: contain'>
               </mat-grid-tile>
             </mat-grid-list>
 
-            <button mat-raised-button color="accent" class="mt-4" style="width: 100%;">Buy Now</button>
+            <button  (click)="createCommandeForProduct(clientId, numcom)" mat-raised-button color="accent" class="mt-4" style="width: 100%;">Buy Now</button>
           </div>
   
           <div class="col-lg-3"></div>
@@ -36,11 +36,11 @@
               
                 <span class="material-icons">location_on</span>
                 <span style="font-size: large; color:blue; margin-left: 0.75rem; ">{{couleur}}</span>
-             
+            
             </div>
   
             <div class="col-lg-6 col-md-6 col-sm-6 col-6 post-date">
-              <p><b> Date of Posting :</b> {{ pdatepost.substring(0, 10) }}</p>
+              <!-- <p><b> Date of Posting :</b> {{ pdatepost.substring(0, 10) }}</p> -->
             </div>
           </div>
   

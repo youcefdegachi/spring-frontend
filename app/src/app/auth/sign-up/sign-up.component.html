@@ -1,0 +1,22 @@
+<!-- client-form.component.html -->
+<form (ngSubmit)="addClient()">
+  <label for="nomcl">Name</label>
+  <input id="nomcl" [(ngModel)]="client.nomcl" name="nomcl" required>
+
+  <label for="prenomcl">First Name</label>
+  <input id="prenomcl" [(ngModel)]="client.prenomcl" name="prenomcl" required>
+
+  <label for="adressecl">Address</label>
+  <input id="adressecl" [(ngModel)]="client.adressecl" name="adressecl" required>
+
+  <label for="telcl">Phone Number</label>
+  <input id="telcl" [(ngModel)]="client.telcl" name="telcl" required>
+
+  <label for="email">Email</label>
+  <input id="email" [(ngModel)]="client.email" name="email" type="email" required>
+
+  <label for="password">Password</label>
+  <input id="password" [(ngModel)]="client.password" name="password" type="password" required>
+
+  <button type="submit">Add Client</button>
+</form>

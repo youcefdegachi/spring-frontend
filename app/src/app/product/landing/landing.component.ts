@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../service/product.service';
+import { ProductService } from '../../service/product.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -26,8 +26,8 @@ export class LandingComponent implements OnInit {
     })
   }
 
-  goToProduct(pid:any){
-    this.router.navigate(["detail/" + pid]);
+  goToProduct(id:any){
+    this.router.navigate(["product/" + id]);
   }
 
 }

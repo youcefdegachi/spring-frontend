@@ -16,13 +16,15 @@ export class ProductService {
     return this.httpClient.post<Product>(this.baseUrl + "/add", productObject);
   }
 
-  public getProductById(id:any){
-    return this.httpClient.get<Product>(this.baseUrl + "/get/by/id/"+ id)
-  }
-
   public getAllProduct(){
     return this.httpClient.get<Product[]>(this.baseUrl + "/all")
   }
+  getProductById(id: number): Observable<any> {
+    console.log(`Fetching product with ID: ${id}`); // Add this line
+    // return this.httpClient.get(`${this.baseUrl}/get/by/id/${id}`);
+    return this.httpClient.get(`${this.baseUrl}/${id}`);
+  }
+
   public deleteProduct(id: number): Observable<void> {
     return this.httpClient.delete<void>(`${this.baseUrl}/${id}`);
   }

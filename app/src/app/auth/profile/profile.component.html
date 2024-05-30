@@ -1,0 +1,32 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">
+          <h4>Profile Information</h4>
+        </div>
+        <div class="card-body">
+          <p><strong>Name:</strong> {{ client?.nomcl }} {{ client?.prenomcl }}</p>
+          <p><strong>Email:</strong> {{ client?.email }}</p>
+          <p><strong>Address:</strong> {{ client?.adressecl }}</p>
+          <p><strong>Phone:</strong> {{ client?.telcl }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">
+          <h4>Commands</h4>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li *ngFor="let command of commandes">
+              <p><strong>Num:</strong> {{ command.numcom }}</p>
+              <p><strong>Date:</strong> {{ command.datecom | date }}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

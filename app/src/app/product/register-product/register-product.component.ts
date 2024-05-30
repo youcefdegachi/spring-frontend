@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Product } from '../model/product';
+import { Product } from '../../model/product';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ProductService } from '../service/product.service';
+import { ProductService } from '../../service/product.service';
 import { Observable, Subscriber } from 'rxjs';
 
 export interface Fruit {
@@ -17,7 +17,7 @@ export class RegisterProductComponent implements OnInit {
   productForm: FormGroup;
   productObj: Product = new Product();
   file = [];
-  // image:string='';
+  image:string='';
   // ==========================================
 
   // ==========================================
@@ -31,7 +31,7 @@ export class RegisterProductComponent implements OnInit {
       desart: new FormControl("", [Validators.required]),
       puart: new FormControl("", [Validators.required]),
       couleur: new FormControl("", [Validators.required]),
-      // image: new FormControl([], Validators.required)
+      image: new FormControl([], Validators.required)
     });
   }
 
@@ -76,7 +76,7 @@ export class RegisterProductComponent implements OnInit {
       this.productObj.desart = this.productForm.value.desart;
       this.productObj.couleur = this.productForm.value.couleur;
       this.productObj.puart = this.productForm.value.puart;
-      // this.productObj.image = this.base64code;
+      this.productObj.image = this.base64code;
       // this.productService.addProduct(this.productObj, this.file[0]).subscribe(data =>
       this.productService.addProduct1(this.productObj).subscribe(data =>
         console.log(data)
@@ -98,7 +98,7 @@ export class RegisterProductComponent implements OnInit {
   }
 
 
-  // myImage!: Observable<any>;
+  myImage!: Observable<any>;
   base64code!: any;
   onChange = ($event: Event) => {
     const target = $event.target as HTMLInputElement;
@@ -112,7 +112,7 @@ export class RegisterProductComponent implements OnInit {
     })
     observable.subscribe((d) => {
       // console.log(d)
-      // this.myImage = d
+      this.myImage = d
       this.base64code = d
     })
   }

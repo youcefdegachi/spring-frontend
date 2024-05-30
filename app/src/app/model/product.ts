@@ -1,13 +1,13 @@
 export class Product {
 
-    pid?:Number;
+    id?:Number;
     pname?:string;
     qtestock?:string;
     pdatepost?:string;
     desart?:string;
     couleur?:string;
     puart?:Number;
-  // image: any;
+  image: any;
     
     // image:[byte];
     
